@@ -1,0 +1,40 @@
+@mixin clearfix {
+   &::after {
+       content: "";
+       display: table;
+       clear: both;
+   }   
+}
+@mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*
+//MIXIN MANAGER
+
+0-600PX = PHONE;
+600-900PX = TAB-PORT;
+900-1200PX = TAP-LAND;
+1200-1800PX = NORMAL SCREEN;
+1800PX + ABOVE = BIG-DESK
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+      @media only screen and (max-width: 37.5em) { @content }; //1em = 16px = 600/16 = 37.5em
+    }
+  @if $breakpoint == tap-port {
+        @media only screen and (max-width: 56.25em) { @content }; //1em = 16px = 900/16 = 56.25em
+    } 
+  @if $breakpoint == tap-land {
+        @media only screen and (max-width: 75em) { @content }; //1em = 16px = 1200/16 = 755em
+    }
+  @if $breakpoint == big-desk {
+        @media only screen and (min-width: 112.5em) { @content }; //1em = 16px = 1800/16 = 112.5em
+    }         
+
+}
+   

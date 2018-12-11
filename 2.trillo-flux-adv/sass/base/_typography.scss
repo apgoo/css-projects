@@ -1,0 +1,11 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    line-height: 2rem;
+    color: var(--grey-dark-2);
+    background-image: linear-gradient(to right bottom, var(--primary-light), var(--primary-dark));
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    min-height: 100vh;
+}

@@ -1,0 +1,41 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; // 1rem => 10px;
+/*
+  @include respond(phone) {
+         font-size: 37.5%; //1px = 6rem/16 =37.5%
+     }*/
+  @include respond(tap-land) { // < 1200px 
+        font-size: 56.25%; //1px = 9rem/16 = 56.25%%
+    }
+
+  @include respond(tap-port) { // < 900px
+        font-size: 50%; //1px = 8rem/16 = 50%
+    }  
+
+  @include respond(big-desk) {
+         font-size: 75%; //1px = 12rem/16 = 75%
+     } 
+  
+}
+
+body {
+    box-sizing: border-box;
+    padding: 3rem;
+
+    @include respond(tap-port) {
+        padding: 0;
+    }
+}
+
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}
